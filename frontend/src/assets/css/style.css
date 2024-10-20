@@ -1,0 +1,421 @@
+:root {
+    --body-color:#f2f2f2;
+    --purple:#4f44b4;
+    --orange:#fe9468;
+    --skyblue:#54c3de;
+ 
+}
+div#root {
+    overflow: hidden;
+    clear: both;
+    width: 100%;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--body-color);
+}
+
+.right-part input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid #c9c6c6;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.right-part input[type="checkbox"]:checked {
+    background-color: white; /* Ensure background stays white when checked */
+    border-color: #c9c6c6;
+}
+.match-per {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+    .matched-perchntage p {
+        margin-bottom: 0px;
+    }   
+.right-part input[type="checkbox"]:checked::before {
+    content: '\f00c';
+    font-family:"fontAwesome";
+    font-weight:100;
+    font-size: 14px;
+    color: black; /* Set checkmark color */
+    display: block;
+    text-align: center;
+    line-height: 14px;
+}
+
+section.main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    z-index: 35;
+    -webkit-transition: border-radius .3s;
+    transition: border-radius .3s;
+}
+.sidebar-brand img {
+    margin-top: 5px;
+    width: 73px;
+    height: auto;
+}
+.sidebar-inner .naver {
+    position: absolute;
+    top: -108px;
+    left: 0;
+    height: 64px;
+    width: 4px;
+    border-radius: 100px;
+    background: var(--purple);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+ul.icon-menu li {
+    position: relative;
+    width: 80px;
+    height: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+}
+ul.icon-menu li i {
+    font-size: 21px;
+}
+ul.icon-menu {
+    margin-top: 30px;
+    padding-left: 26px;
+}
+ul.icon-menu li i {
+    font-size: 21px;
+    color: #f37577;
+}
+.profile-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.profile-menu i {
+    background: #9675ac;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+}
+.icon-menu .sidebar-svg {
+    height: 20px;
+    width: 20px;
+    stroke: #a9abac;
+    stroke-width: 1.6px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.icon-menu .sidebar-svg:hover {
+  
+    stroke: var(--purple);
+}
+section.right-part.view-wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    width: calc(100% - 80px);
+    padding: 0 0 60px;
+    margin-left: 80px;
+    background: #f0f0f0;
+    background: #f2f2f2;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.right-part {
+    padding: 0px 40px;
+}
+.right-part h1 {
+    font-size: 25px;
+    margin-top: 20px;
+}
+hr {
+    background-color: #cecece;
+    border: none;
+    display: block;
+    height: 2px;
+    margin: 1.5rem 0;
+}
+.left-part {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.search-part h3 {
+    font-size: 19px;
+    font-weight: 600;
+}
+.search-part > p {
+    font-weight: 300;
+    color: #a2a5b9;
+    font-size: 14px;
+}
+.control.has-icon {
+    position: relative;
+}
+.control.has-icon .input {
+    height: 38px;
+    padding-left: 38px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border: 1px solid #dbdbdb;
+    font-size: 12px;
+    width: 100%;
+}
+.control.has-icon .form-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 38px;
+    width: 38px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.control.has-icon .form-icon svg {
+    height: 18px;
+    width: 18px;
+    stroke: #cecece;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.select select, .textarea, .input {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+}
+
+
+
+
+
+
+  
+.collapse-btn {
+    text-align: left;
+    background-color: #f1f1f100;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: block;
+    display: block;
+    width: 100%;
+    position: relative;
+	color: #363636;
+}
+  .icon {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .filter-content {
+    margin-top: 10px;
+    display: none;
+  }
+  
+  
+  
+  .filter-content input[type="checkbox"] {
+    position: relative;
+    top: 3px;
+}
+.filter-content label {
+    font-size: 11px !important;
+    padding: 4px 7px !important;
+    color: #a2a5b9;
+}
+.race-part {
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+button.collapse-btn span {
+    position: absolute;
+    right: 0;
+}
+.buttons button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    padding: 10px;
+    font-weight: 600;
+}
+button#btn-filter-donor {
+    background: var(--orange);
+    border: none;
+    color: #fff;
+}
+button#btn-reset-donor-filter {
+    border: 1px solid #dbdbdb;
+    background: #fff;
+	color:#000;
+}
+.featured-image {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 358px;
+	background-image: url(./images/causian.jpg);
+    background-position: center; 
+    background-size: cover;
+}
+.featured-content {
+    position: relative;
+    padding: 25px;
+    border-radius: 18px;
+    background: #fff;
+    margin-top: -40px;
+    z-index: 1;   
+}
+h4.dark-inverted.mb-0 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #283252;
+}
+p.is-size-7.eggs {
+    color: #8a62a5 !important;
+    font-weight: 700 !important;
+    font-size: 10px;
+	font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.articles-feed a {
+    text-decoration: none;
+}
+.column.is-6 {
+    width: 50% !important;}
+
+    .detail1 {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+.detail-right p {
+    margin-bottom: 0px;
+}
+
+.detail-right h5 {
+    margin-bottom: -4px;
+}
+.detail-right {
+    padding-left: 10px;
+}
+.detail-right h5 {
+    margin-bottom: -4px;
+    font-size: 11px;
+    color: #283252;
+    font-weight: 600;
+}
+.detail-right p {
+    color: #a2a5b9;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.detail-left img {
+    width: 30px;
+}
+.search-job {
+    padding-left: 30px;
+}
+.donor-lady {
+    margin-top: 20px;
+}
+div#pagination .active {
+    background: var(--purple);
+    color: #fff;
+}
+    .pagination1 .button {
+        background-color: #fff;
+        border-color: #dbdbdb;
+        border-width: 1px;
+        color: #363636;
+        cursor: pointer;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding-bottom: calc(0.5em - 1px);
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: calc(0.5em - 1px);
+        text-align: center;
+        white-space: nowrap;
+    } 
+    .pagination1 .ml-1 {
+        margin-left: .25rem !important;
+    }
+    .pagination1 .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        font-size: 1rem;
+        height: 2.5em;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        line-height: 1.5;
+        padding-bottom: calc(0.5em - 1px);
+        padding-left: calc(0.75em - 1px);
+        padding-right: calc(0.75em - 1px);
+        padding-top: calc(0.5em - 1px);
+        position: relative;
+        vertical-align: top;
+    }
+    .pagination1 {
+        text-align: right;
+        margin-top: 30px;
+    }
+    .right-box {
+        margin-top: 70px;
+    }
+
+
+/*new css 3-10-24*/
+div#donor-accordian h2 button {
+    font-size: 14px;
+    line-height: 20px;
+}

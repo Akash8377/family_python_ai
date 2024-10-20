@@ -1,0 +1,93 @@
+Create table [ied].[SearchCriteria](id int identity(1,1),
+SearchCriteriaName varchar(100), Weightage  int, Threshold varchar(10),TypeCheck varchar(100),
+Priorites tinyint, AdultCheck bit,IsActive bit default(1))
+
+USE [GenAI]
+GO
+/****** Object:  StoredProcedure [dbo].[Usp_searchDetails]    Script Date: 10/6/2024 8:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Usp_searchDetails](@SearchCriteria varchar(max)='')      
+as      
+begin       
+      
+SELECT       
+      P.[Id]      
+      --,[Created]      
+      --,[UserId]      
+      --,[ApplicationType]      
+      ,[FirstName]      
+      ,[LastName]      
+      ,[Email]      
+      --,[Address1]      
+      --,[Address2]      
+      --,[City]      
+      --,[State]      
+      --,[StateId]      
+      --,[PostalCode]      
+      --,[CountryId]      
+      --,[Phone]      
+      --,[PhoneTypeId]            
+   ,DATEDIFF(YEAR, BirthDate, GETDATE()) -      CASE          WHEN MONTH(BirthDate) > MONTH(GETDATE()) OR     
+   (MONTH(BirthDate) = MONTH(GETDATE()) AND DAY(BirthDate) > DAY(GETDATE()))          THEN 1          ELSE   
+  0     END AS Age     
+     -- ,[GenderId]      
+      ,[HariId]      
+   ,AHair.Name  HairName       
+      ,[EyesId]      
+   ,AEYE.Name EyesName      
+      ,[Height]      
+   ,Height.Name HeightName      
+      ,[Weight]      
+      ,[EducationId]      
+   ,AEducation.Name EducationName      
+      --,[FatherEthnicityId]      
+      --,[FathersBirthPlace]      
+      --,[MotherEthnicityId]      
+      --,[MothersBirthPlace]      
+      --,[MaritalStatusId]      
+      --,[DietId]      
+      --,[BodyId]      
+      --,[ReligionId]      
+      --,[SmokingId]      
+      --,[DrinkerId]      
+      ,[BloodTypeId]      
+   ,ABloodType.Name BloodTypeName      
+      --,[Hidden]      
+      --,[Deleted]      
+      --,[ForeignId]      
+      --,[HistoryId]      
+      --,[ComplexionId]      
+      ,[Status]      
+      ,[PictureName1]      
+      ,[PictureName2]      
+      ,[Personality]      
+      ,[MedicalHistory]      
+      --,[Occupation]      
+      --,[TitleId]      
+      ,[RaceId]      
+   ,ARace.Name RaceName    
+   , 0 SearchRatio    
+      --,[Priority]      
+      --,[RequestFromWeb]      
+      --,[admin_notes]      
+      --,[admin_comments]       
+      ,medi.MedicalConditionName
+	  ,harmo.profileName HarmonalProfileName
+	  ,energy.energyLevelName
+	  ,diet.Name DietName
+   FROM [GenAI].[ied].[Person] P   
+  inner join  [ied].[Attributes] AHair on P.HariId = AHair.Id  and AHair.AttributeTypeId = 10  
+  inner join  [ied].[Attributes] AEYE on P.EyesId = AEYE.Id and AEYE.AttributeTypeId= 9  
+  left join  [ied].[Attributes] Height on P.Height = Height.Id  and Height.AttributeTypeId= 20  
+  inner join  [ied].[Attributes] AEducation on P.EducationId = AEducation.Id and AEducation.AttributeTypeId= 6  
+  inner join  [ied].[Attributes] ABloodType on P.BloodTypeId = ABloodType.Id  and ABloodType.AttributeTypeId= 1  
+  inner join  [ied].[Attributes] ARace on P.RaceId = ARace.Id   and ARace.AttributeTypeId = 18  
+  inner join  [ied].[Attributes] diet on P.RaceId = diet.Id   and diet.AttributeTypeId = 18  
+  inner join  [dbo].[MedicalCondition] medi on P.MedicalConditionId = medi.Id 
+  inner join  [dbo].[HarmonalProfile] harmo on P.HarmonalProfileId = harmo.Id  
+  inner join  [dbo].[EnergyLevel] energy on P.PhysicalActivityId = energy.Id  
+  where [PictureName1] is not null
+end
