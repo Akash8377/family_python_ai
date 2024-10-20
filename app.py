@@ -42,8 +42,11 @@ def create_app():
     app = cors(app, allow_origin="*")
     return app
 
-
 @bp.route("/")
+async def test():
+    return "RUN API"
+
+@bp.route("/index")
 async def index():
     return await render_template(
         "index.html",

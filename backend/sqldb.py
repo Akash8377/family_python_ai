@@ -2,10 +2,11 @@ from typing import Any
 import pandas as pd
 import pyodbc
 import logging
-SERVER = 'Ashish\SQLEXPRESS'
+# SERVER = 'Ashish\SQLEXPRESS'
+SERVER = 'genai.clciwci8o9nx.us-east-1.rds.amazonaws.com,1433'
 DATABASE = 'GenAI'
-# USERNAME = '<username>'
-# PASSWORD = '<password>'
+USERNAME = 'admin'
+PASSWORD = '023xy9PoA3Iywmv23M5S'
 # connectionString = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USERNAME};PWD={PASSWORD}'
 connectionString = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;'
 def executeSQLQuery(query: str):
