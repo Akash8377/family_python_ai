@@ -1,6 +1,6 @@
 import { ProfilesModels, SearchCriteria } from '../models/models';
 
-const url = "https://ec2-54-196-65-48.compute-1.amazonaws.com/"
+const url = "https://ec2-54-196-65-48.compute-1.amazonaws.com"
 // const url = "http://127.0.0.1:5000"
 export async function saveProfiles(profilesModels: ProfilesModels, abortSignal: AbortSignal): Promise<Response> {
   const response = await fetch(url+'/api/saveProfile', {
