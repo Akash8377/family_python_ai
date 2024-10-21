@@ -1,7 +1,7 @@
 import { ProfilesModels, SearchCriteria } from '../models/models';
 
-// let url = "http://127.0.0.1:5000"
-const url = "http://0.0.0.0:5000"
+const url = "http://127.0.0.1:5000"
+// const url = "http://0.0.0.0:5000"
 export async function saveProfiles(profilesModels: ProfilesModels, abortSignal: AbortSignal): Promise<Response> {
   const response = await fetch(url+'/api/saveProfile', {
     method: 'POST',
