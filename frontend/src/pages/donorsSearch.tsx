@@ -489,9 +489,7 @@ const DonorsSearch = () => {
               </div>
 
               {evenNumbers.length > 0 ? (evenNumbers.map((_, index) => (
-
                 <>
-
                   <div className="donor-lady">
                     <div className="row">
                       <div className="col-md-6">
