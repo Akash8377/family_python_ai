@@ -145,5 +145,5 @@ async def searchDetails():
     return records.to_json(orient='records')
 
 app = create_app()  
-# app.run(host='0.0.0.0', port=5000)
-app.run()
+app.run(host='0.0.0.0', port=5000)
+# app.run()
