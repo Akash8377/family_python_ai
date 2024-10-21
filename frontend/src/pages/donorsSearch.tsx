@@ -488,7 +488,7 @@ const DonorsSearch = () => {
                 <div className="searched-count">Showing <span className="total-result">{SearchResult.length}</span> Cohorts</div>
               </div>
 
-              {evenNumbers.length > 0 ? (evenNumbers.map((index) => (
+              {evenNumbers.length > 0 ? (evenNumbers.map((item, index) => (
 
                 <>
 
